@@ -1,0 +1,33 @@
+{
+  "manifest_version": 2,
+  "name": "my chrome extension",
+  "version": "0.1.0",
+  "description": "My Chrome Extension",
+  "icons": {
+    "32": "icons/icon_32.png"
+  },
+  "background": {
+    "scripts": [
+      "background.js"
+    ],
+    "persistent": false
+  },
+  "browser_action": {
+    "default_title": "popup title",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "storage"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ],
+  "devtools_page": "panelcreate.html"
+}
